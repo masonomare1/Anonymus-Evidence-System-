@@ -1,0 +1,18 @@
+:root{
+  --ink:#1a1714; --paper:#f7f4ee; --burgundy:#7a1f2b; --burgundy-2:#9b2d3a;
+  --gold:#c8a44d; --muted:#6b6256; --line:#e4ddd0;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial}
+.display{font-family:Georgia,"Times New Roman",serif;letter-spacing:-.01em}
+.accent{color:var(--burgundy)}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+.ring{transition:stroke-dashoffset 1.2s ease}
+.seal{transform:scale(.6) rotate(-12deg);opacity:0;transition:transform .5s cubic-bezier(.2,.8,.2,1.4),opacity .5s}
+.seal.in{transform:scale(1) rotate(-8deg);opacity:1}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(20px);
+  background:var(--ink);color:var(--paper);padding:10px 16px;border-radius:8px;opacity:0;
+  transition:opacity .3s,transform .3s;pointer-events:none}
+.toast.in{opacity:1;transform:translateX(-50%) translateY(0)}

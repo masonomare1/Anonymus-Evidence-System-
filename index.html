@@ -1,0 +1,66 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Objection — Anonymous Source Verification</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css">
+<style>.display{font-family:"Playfair Display",Georgia,serif}</style>
+</head>
+<body class="antialiased">
+  <nav class="max-w-6xl mx-auto flex items-center justify-between px-6 py-5">
+    <span class="display text-2xl font-extrabold">OBJECTION</span>
+    <a href="/verify.html" class="px-4 py-2 rounded-lg text-white" style="background:var(--burgundy)">Verify Evidence</a>
+  </nav>
+
+  <header class="max-w-4xl mx-auto px-6 pt-12 pb-16 text-center">
+    <p class="uppercase tracking-widest text-sm accent mb-4">The AI Tribunal of Truth</p>
+    <h1 class="display text-5xl md:text-6xl font-extrabold leading-tight">Prove anonymous evidence is real — without exposing the source.</h1>
+    <p class="mt-6 text-lg" style="color:var(--muted)">Anyone can hash a file after creating it. Objection establishes integrity at intake and triangulates genuineness across the whole package — then issues a public, privacy-preserving certificate.</p>
+    <a href="/verify.html" class="inline-block mt-8 px-7 py-3 rounded-xl text-white text-lg" style="background:var(--burgundy)">Verify Evidence →</a>
+  </header>
+
+  <section class="max-w-5xl mx-auto px-6 py-12 grid md:grid-cols-2 gap-8 reveal">
+    <div><h2 class="display text-3xl font-bold mb-3">Why a hash isn't enough</h2>
+      <p style="color:var(--muted)">A hash proves a file hasn't changed <em>since you hashed it</em> — not where it came from. We split the claim: <strong>integrity from intake</strong> (SHA-256 + timestamp + chain of custody) and <strong>genuineness</strong> (AI corroboration across independent items). We never claim to identify the source.</p></div>
+    <div class="rounded-2xl p-6" style="background:#fff;border:1px solid var(--line)">
+      <h3 class="font-semibold mb-2">What we do / don't claim</h3>
+      <ul class="space-y-2 text-sm" style="color:var(--muted)">
+        <li>✓ Tamper-evident from the moment of intake</li>
+        <li>✓ Cross-evidence consistency, corroboration, plausibility</li>
+        <li>✗ We do not reveal or verify the source's identity</li>
+        <li>✗ We do not claim cryptographic proof of origin</li>
+      </ul></div>
+  </section>
+
+  <section class="max-w-5xl mx-auto px-6 py-12">
+    <h2 class="display text-3xl font-bold text-center mb-10">How it works</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="reveal rounded-2xl p-6" style="background:#fff;border:1px solid var(--line)"><div class="text-3xl accent display font-bold">1</div><h3 class="font-semibold mt-2">Intake & capture</h3><p class="text-sm mt-1" style="color:var(--muted)">Each item is hashed, timestamped, and logged. Audio is transcribed.</p></div>
+      <div class="reveal rounded-2xl p-6" style="background:#fff;border:1px solid var(--line)"><div class="text-3xl accent display font-bold">2</div><h3 class="font-semibold mt-2">AI analysis</h3><p class="text-sm mt-1" style="color:var(--muted)">The engine scores consistency, corroboration, and plausibility across the package.</p></div>
+      <div class="reveal rounded-2xl p-6" style="background:#fff;border:1px solid var(--line)"><div class="text-3xl accent display font-bold">3</div><h3 class="font-semibold mt-2">Certificate</h3><p class="text-sm mt-1" style="color:var(--muted)">A public, privacy-preserving certificate with copy-paste attribution.</p></div>
+    </div>
+  </section>
+
+  <section class="max-w-3xl mx-auto px-6 py-12">
+    <h2 class="display text-3xl font-bold text-center mb-6">Example certificate</h2>
+    <div id="example-cert" class="rounded-2xl p-8" style="background:#fff;border:1px solid var(--line)">
+      <!-- ui.js renderSampleCertificate() injects a sample verdict here on load -->
+    </div>
+  </section>
+
+  <section class="max-w-3xl mx-auto px-6 py-16 text-center">
+    <h2 class="display text-4xl font-bold mb-4">Verify your evidence now</h2>
+    <a href="/verify.html" class="inline-block px-7 py-3 rounded-xl text-white text-lg" style="background:var(--burgundy)">Verify Evidence →</a>
+  </section>
+
+  <footer class="border-t" style="border-color:var(--line)"><div class="max-w-6xl mx-auto px-6 py-8 text-sm" style="color:var(--muted)">Objection — prototype. Not legal advice.</div></footer>
+
+  <script src="/assets/ui.js"></script>
+  <script>
+    const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.15});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+    document.addEventListener('DOMContentLoaded',()=>window.renderSampleCertificate&&window.renderSampleCertificate());
+  </script>
+</body></html>
