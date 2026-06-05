@@ -1,0 +1,14 @@
+{
+  "name": "objection-source-verification",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "build:demo": "node scripts/build-demo.mjs"
+  },
+  "dependencies": {
+    "groq-sdk": "^0.7.0"
+  },
+  "engines": { "node": "20.x" }
+}
