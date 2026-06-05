@@ -1,0 +1,23 @@
+# Dependencies & secrets
+node_modules/
+.vercel/
+
+# Raw + confidential evidence and the brief (never publish)
+_evidence_src/
+evidences/
+_extract_evidence.py
+Anonymous_Source_Verification_System_Brief.pdf
+
+# Internal planning artifacts (kept local, not for the submission repo)
+docs/
+Project_Silver_Approach_Plan.docx
+make_doc.py
+
+# Editor / tooling
+.claude/
+
+# OS cruft
+.DS_Store
+Thumbs.db
+tests/
+config.bat
